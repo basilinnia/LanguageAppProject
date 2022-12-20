@@ -2,12 +2,15 @@ package com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_scree
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.*
+import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -20,14 +23,15 @@ import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBottomBarColor
 @Composable
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
-        BottomBarScreen.LessonScreen,
         BottomBarScreen.MainScreen,
         BottomBarScreen.CameraScreen,
+        BottomBarScreen.LessonScreen
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation (
+    BottomAppBar (
+        cutoutShape = CircleShape,
         backgroundColor = darkBlue
         ){
         screens.forEach { screen ->

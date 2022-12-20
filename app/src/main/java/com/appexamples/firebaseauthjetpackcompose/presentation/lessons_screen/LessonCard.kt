@@ -1,7 +1,9 @@
 package com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
@@ -22,7 +24,9 @@ fun  LessonCard() {
         .padding(start = 15.dp), elevation = 8.dp, shape = RoundedCornerShape(10.dp))
     {
                 Row (modifier = Modifier.background(lightBlue)) {
-                Column(modifier = Modifier.padding(horizontal = 6.dp)) {
+                Column(modifier = Modifier
+                    .padding(horizontal = 6.dp)
+                    .horizontalScroll(enabled = true, state = rememberScrollState())) {
                     Text(
                         modifier = Modifier.padding(8.dp),
                         text = "lesson",
