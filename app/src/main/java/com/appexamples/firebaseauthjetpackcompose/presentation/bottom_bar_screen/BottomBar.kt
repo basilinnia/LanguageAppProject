@@ -1,16 +1,28 @@
 package com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_screen
 
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.LinearGradient
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -24,7 +36,6 @@ import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBottomBarColor
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.MainScreen,
-        BottomBarScreen.CameraScreen,
         BottomBarScreen.LessonScreen
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -32,8 +43,11 @@ fun BottomBar(navController: NavHostController) {
 
     BottomAppBar (
         cutoutShape = CircleShape,
-        backgroundColor = darkBlue
-        ){
+        backgroundColor = backgroundColor ,
+        modifier = Modifier
+            .clip(RoundedCornerShape(percent = 22))
+            .height(75.dp)
+    ){
         screens.forEach { screen ->
             AddItem(
                 screen = screen,
@@ -57,7 +71,10 @@ fun RowScope.AddItem(
         icon = {
             Icon(
                 imageVector = screen.icon,
-                contentDescription = "Navigation Icon"
+                contentDescription = "Navigation Icon",
+                modifier = Modifier
+                    .size(30.dp)
+                    .align(CenterVertically)
             )
         },
         selected = currentDestination?.hierarchy?.any {

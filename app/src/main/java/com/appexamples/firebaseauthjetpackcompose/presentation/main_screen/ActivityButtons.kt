@@ -1,4 +1,5 @@
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.material.Icon
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.bounceClick
 
 @Composable
@@ -23,7 +26,7 @@ fun MainNavButtons() {
         }
         Spacer(modifier = Modifier.height(25.dp))
         Row(modifier = Modifier.fillMaxWidth()) {
-            ActivityBox(icon  = Icons.Outlined.Face,  title =  "Face")
+            ActivityBox(icon  = Icons.Outlined.Face,  title =  "Face" )
             ActivityBox(icon = Icons.Outlined.TableChart, title = "TableChart")
             }
         }
@@ -31,17 +34,17 @@ fun MainNavButtons() {
 
 
 @Composable
-fun ActivityBox(icon: ImageVector, title: String){
+fun ActivityBox(icon: ImageVector, title: String ){
     Column(modifier = Modifier
         .padding(start = 10.dp, end = 20.dp)
         .bounceClick()
         .width(140.dp)
         .height(90.dp)
-        .border(2.dp, Color.Black, shape = RoundedCornerShape(10.dp) ),
+        .border(2.dp, Color.White, shape = RoundedCornerShape(10.dp)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-            Icon(imageVector = icon, contentDescription = null)
+            Icon(imageVector = icon, contentDescription = null, tint = Color.White)
             Text(text = title)
     }
 }
