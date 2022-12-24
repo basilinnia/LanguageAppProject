@@ -21,7 +21,7 @@ sealed class BottomBarScreen(
     object LessonScreen : BottomBarScreen(
         route = "lessons",
         title = "Lessons",
-        icon = Icons.Default.Book
+        icon = Icons.Default.School
     )
 
     object CameraScreen : BottomBarScreen(
@@ -29,4 +29,16 @@ sealed class BottomBarScreen(
         title = "Camera",
         icon = Icons.Outlined.PhotoCamera
     )
+
+    object DictionaryScreen : BottomBarScreen(
+        route = "dictionary",
+        title = "Dictionary",
+        icon = Icons.Default.Book
+    )
+    object ProfileScreen  : BottomBarScreen(
+        route = "profile",
+        title = "Profile",
+        icon = Icons.Default.Person
+    )
+
 }

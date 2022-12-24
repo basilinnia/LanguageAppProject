@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.appexamples.firebaseauthjetpackcompose.navigation.Screens
 import com.appexamples.firebaseauthjetpackcompose.presentation.camera_screen.CameraScreen
+import com.appexamples.firebaseauthjetpackcompose.presentation.dictionary_screen.DictionaryScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen.LessonsScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.HomeScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.MainScreen
@@ -25,6 +26,12 @@ fun BottomBarNavGraph(navController: NavHostController) {
         }
         composable(route = BottomBarScreen.CameraScreen.route) {
             CameraScreen()
+        }
+        composable(route = BottomBarScreen.ProfileScreen.route) {
+            CameraScreen()
+        }
+            composable(route = BottomBarScreen.DictionaryScreen.route) {
+            DictionaryScreen()
         }
     }
 }

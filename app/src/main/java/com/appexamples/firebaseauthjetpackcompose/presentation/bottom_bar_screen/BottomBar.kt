@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.LinearGradient
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -36,19 +37,30 @@ import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBottomBarColor
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.MainScreen,
-        BottomBarScreen.LessonScreen
+        BottomBarScreen.LessonScreen,
+        BottomBarScreen.DictionaryScreen,
+        BottomBarScreen.ProfileScreen
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
     BottomAppBar (
         cutoutShape = CircleShape,
-        backgroundColor = backgroundColor ,
+        backgroundColor = Color.DarkGray ,
         modifier = Modifier
             .clip(RoundedCornerShape(percent = 22))
             .height(75.dp)
     ){
-        screens.forEach { screen ->
+        screens.forEachIndexed{ index, screen ->
+            if (index == 2) {
+                // add an empty space for FAB
+                BottomNavigationItem(
+                    selected = false,
+                    onClick = {},
+                    icon = {},
+                    enabled = false
+                )
+            }
             AddItem(
                 screen = screen,
                 currentDestination = currentDestination,
@@ -66,7 +78,7 @@ fun RowScope.AddItem(
 ) {
     BottomNavigationItem(
         label = {
-            Text(text = screen.title)
+            Text(text = screen.title, fontSize = 9.sp)
         },
         icon = {
             Icon(

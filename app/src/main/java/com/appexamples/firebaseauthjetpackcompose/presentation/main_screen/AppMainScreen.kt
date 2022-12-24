@@ -26,6 +26,7 @@ import com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_screen
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.bg_color
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.darkBlue
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBlue
+import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBottomBarColor
 
 
 @Composable
@@ -33,15 +34,16 @@ fun MainScreen() {
     val scaffoldState = rememberScaffoldState()
     val navController = rememberNavController()
  Scaffold(
+     backgroundColor = bg_color,
      bottomBar = { BottomBar(navController = navController) },
      floatingActionButton = {
          FloatingActionButton(
-             backgroundColor = Color.DarkGray
+             backgroundColor = Color.LightGray
              ,onClick = {
              // FAB onClick
              navController.navigate(Screens.CameraScreen.route)
          }) {
-             Icon(tint = Color.Black, imageVector = Icons.Outlined.PhotoCamera, contentDescription = "Camera")
+             Icon(tint = lightBottomBarColor, imageVector = Icons.Outlined.PhotoCamera, contentDescription = "Camera")
          }
      },
      scaffoldState = scaffoldState,
@@ -49,56 +51,6 @@ fun MainScreen() {
      floatingActionButtonPosition = FabPosition.Center
  ) {
         BottomBarNavGraph(navController = navController)
-    }
-}
-
-@Composable
-fun HomeScreen() {
-    Column(
-        modifier = Modifier
-            .background(color = bg_color)
-            .fillMaxWidth()
-            .padding(20.dp)
-        ) {
-        Row(modifier = Modifier.padding(top = 20.dp)) {
-            Column {
-                Text(
-                    text = "Hello, Ecem",
-                    fontSize = 25.sp,
-                    modifier = Modifier.padding(end = 150.dp)
-                )
-                Text(
-                   text = "Let's learn something today",
-                    fontStyle = FontStyle.Italic,
-                    color = Color.Gray
-                )
-            }
-            Image(
-                painter = painterResource(id = R.drawable.profile),
-                contentDescription = "User profile photo",
-                modifier = Modifier
-                    .size(60.dp)
-                    .clip(CircleShape)
-            )
-        }
-        Card(
-            shape = RoundedCornerShape(20.dp),
-            modifier = Modifier
-                .padding(vertical = 45.dp)
-                .height(160.dp)
-                .fillMaxWidth(),
-            backgroundColor = darkBlue
-        ) {
-            Row(modifier = Modifier
-                .clickable(onClick = { })
-                ) {
-                Column(modifier = Modifier.padding(30.dp)) {
-                    Text(text = "LESSON NAME")
-                }
-        }
-    }
-        MainNavButtons()
-
     }
 }
 

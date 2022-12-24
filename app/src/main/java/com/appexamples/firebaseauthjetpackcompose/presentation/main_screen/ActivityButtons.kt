@@ -1,3 +1,4 @@
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.material.Icon
@@ -16,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.bounceClick
+import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightColor
 
 @Composable
 fun MainNavButtons() {
@@ -38,9 +40,11 @@ fun ActivityBox(icon: ImageVector, title: String ){
     Column(modifier = Modifier
         .padding(start = 10.dp, end = 20.dp)
         .bounceClick()
-        .width(140.dp)
+        .width(153.dp)
         .height(90.dp)
-        .border(2.dp, Color.White, shape = RoundedCornerShape(10.dp)),
+        .border(2.dp, Color.White, shape = RoundedCornerShape(10.dp))
+        .background(lightColor)
+        ,
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
