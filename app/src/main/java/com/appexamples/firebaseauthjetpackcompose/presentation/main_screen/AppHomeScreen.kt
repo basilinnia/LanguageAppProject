@@ -3,6 +3,7 @@ package com.appexamples.firebaseauthjetpackcompose.presentation.main_screen
 import MainNavButtons
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -13,6 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontStyle.Companion.Italic
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.appexamples.firebaseauthjetpackcompose.R
@@ -23,13 +25,13 @@ import com.appexamples.firebaseauthjetpackcompose.ui.theme.darkBlue
 @Composable
 fun HomeScreen() {
     Column(modifier = Modifier
-        .padding(12.dp)
+        .padding(20.dp)
         .verticalScroll(rememberScrollState())
     ) {
-          Header()
-           FirstCard()
-            MainNavButtons()
-            PopularLessons()
+        Header()
+        Spacer(modifier = Modifier.height(50.dp))
+        MainNavButtons()
+        PopularLessons()
         }
 }
 
@@ -53,6 +55,7 @@ fun PopularLessons(){
     }
 }
 
+/*
 @Composable
 fun FirstCard(){
     Card(
@@ -72,6 +75,7 @@ fun FirstCard(){
         }
     }
 }
+*/
 
 @Composable
 fun Header() {
@@ -79,13 +83,14 @@ fun Header() {
         modifier = Modifier
             .fillMaxWidth()
     ) {
-        Row(modifier = Modifier.padding(top = 20.dp)) {
+        Row(modifier = Modifier.padding(top = 30.dp)) {
             Column {
                 Text(
                     text = "Hello, Ecem",
+                    fontWeight = FontWeight.Bold,
                     color = Color.White,
-                    fontSize = 25.sp,
-                    modifier = Modifier.padding(end = 150.dp)
+                    fontSize = 30.sp,
+                    modifier = Modifier.padding(end = 130.dp)
                 )
                 Text(
                     text = "Let's learn something today",
@@ -97,8 +102,8 @@ fun Header() {
                 painter = painterResource(id = R.drawable.profile),
                 contentDescription = "User profile photo",
                 modifier = Modifier
-                    .size(60.dp)
-                    .clip(RoundedCornerShape(10))
+                    .size(55.dp)
+                    .clip(CircleShape)
             )
         }
     }
