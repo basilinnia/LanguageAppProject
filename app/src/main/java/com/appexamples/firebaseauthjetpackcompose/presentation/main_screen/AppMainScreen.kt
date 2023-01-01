@@ -11,8 +11,7 @@ import com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_screen
 import com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_screen.BottomBarNavGraph
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.bg_color
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.fabColor
-import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBlue
-import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightBarColor
+
 
 
 @Composable

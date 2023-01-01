@@ -4,8 +4,6 @@ import MainNavButtons
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,20 +11,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontStyle.Companion.Italic
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.appexamples.firebaseauthjetpackcompose.R
 import com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen.LessonCard
-import com.appexamples.firebaseauthjetpackcompose.ui.theme.darkBlue
 
 
 @Composable
 fun HomeScreen() {
     Column(modifier = Modifier
-        .padding(20.dp)
         .verticalScroll(rememberScrollState())
+        .padding(start = 30.dp, end = 15.dp)
     ) {
         Header()
         Spacer(modifier = Modifier.height(50.dp))
@@ -38,59 +34,34 @@ fun HomeScreen() {
 @Composable
 fun PopularLessons(){
     Column(modifier = Modifier
-        .padding(top = 40.dp, start = 5.dp, end=5.dp)
+        .padding(top = 20.dp)
     ) {
-         Text(text = "Popular Lessons For You", color= Color.White, fontSize = 20.sp)
+         Text(text = "Pick a Lesson", color= Color.White, fontSize = 24.sp)
         Spacer(modifier = Modifier.height(10.dp))
-        LessonCard()
+        LessonCard("Numbers", 30f)
         Spacer(modifier = Modifier.height(10.dp))
-        LessonCard()
+        LessonCard("Colors", 45f)
         Spacer(modifier = Modifier.height(10.dp))
-        LessonCard()
-        Spacer(modifier = Modifier.height(10.dp))
-        LessonCard()
-        Spacer(modifier = Modifier.height(10.dp) )
-        LessonCard()
-        Spacer(modifier = Modifier.height(75.dp))
+        LessonCard("Animals", 89f)
+        Spacer(modifier = Modifier.height(100.dp))
     }
 }
-
-/*
-@Composable
-fun FirstCard(){
-    Card(
-        shape = RoundedCornerShape(20.dp),
-        modifier = Modifier
-            .padding(vertical = 45.dp)
-            .height(120.dp)
-            .fillMaxWidth(),
-        backgroundColor = darkBlue
-    ) {
-        Row(modifier = Modifier
-            .clickable(onClick = { })
-        ) {
-            Column(modifier = Modifier.padding(30.dp)) {
-                Text(text = "LESSON NAME")
-            }
-        }
-    }
-}
-*/
 
 @Composable
 fun Header() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(top = 50.dp)
     ) {
-        Row(modifier = Modifier.padding(top = 30.dp)) {
+        Row {
             Column {
                 Text(
                     text = "Hello, Ecem",
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
-                    fontSize = 30.sp,
-                    modifier = Modifier.padding(end = 130.dp)
+                    fontSize = 35.sp,
+                    modifier = Modifier.padding(end = 90.dp)
                 )
                 Text(
                     text = "Let's learn something today",
