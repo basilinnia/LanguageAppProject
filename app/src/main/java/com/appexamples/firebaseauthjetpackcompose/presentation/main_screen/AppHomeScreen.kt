@@ -3,9 +3,13 @@ package com.appexamples.firebaseauthjetpackcompose.presentation.main_screen
 import MainNavButtons
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -15,6 +19,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.appexamples.firebaseauthjetpackcompose.R
+import com.appexamples.firebaseauthjetpackcompose.data.Lesson
+import com.appexamples.firebaseauthjetpackcompose.data.lessonList
 import com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen.LessonCard
 
 
@@ -33,19 +39,27 @@ fun HomeScreen() {
 
 @Composable
 fun PopularLessons(){
+    val lessonList = lessonList()
+    val lessons = remember { lessonList.shuffled().slice(1 .. lessonList.size/10) }
+
     Column(modifier = Modifier
         .padding(top = 20.dp)
     ) {
-         Text(text = "Pick a Lesson", color= Color.White, fontSize = 24.sp)
-        Spacer(modifier = Modifier.height(10.dp))
-        LessonCard("Numbers", 30f)
-        Spacer(modifier = Modifier.height(10.dp))
-        LessonCard("Colors", 45f)
-        Spacer(modifier = Modifier.height(10.dp))
-        LessonCard("Animals", 89f)
+        Text(text = "Pick a Lesson", color= Color.White, fontSize = 24.sp)
+        Column(){
+            for(it in lessons){
+                    LessonCard(lesson = it)
+                    println("HEY BURAYA BAK LAN"+it.color)
+                    Spacer(modifier = Modifier.height(10.dp))
+                }
+            }
         Spacer(modifier = Modifier.height(100.dp))
     }
 }
+
+
+
+
 
 @Composable
 fun Header() {

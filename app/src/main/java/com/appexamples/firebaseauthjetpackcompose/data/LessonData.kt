@@ -1,39 +1,36 @@
 package com.appexamples.firebaseauthjetpackcompose.data
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.ui.graphics.Brush
+import com.appexamples.firebaseauthjetpackcompose.ui.theme.gradientList
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlin.random.Random
 
 data class Lesson (
     var lesson_name: String =" ",
+    var color: Brush = gradientList[4],
     var words: List<String> = listOf()
 )
 
 val db = Firebase.firestore.collection("lessons")
 
-fun addWord(words: List<Lesson>) {
-    words.forEach { word->
-        db.document(word.lesson_name)
-            .set(word)
-            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
-            .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
-    }
-}
-
-
-
 @Composable
-fun GetData(lessons: SnapshotStateList<Lesson>) {
+fun lessonList(lessons: SnapshotStateList<Lesson> = remember { mutableStateListOf(Lesson()) }): List<Lesson> {
     db.get().addOnSuccessListener {
         lessons.updateList(it.toObjects(Lesson::class.java))
     }.addOnFailureListener {
         lessons.updateList(listOf())
     }
+    return lessons
 }
+
 fun <T> SnapshotStateList<T>.updateList(newList: List<T>){
     clear()
     addAll(newList)
 }
+
+

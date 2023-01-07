@@ -3,24 +3,22 @@ package com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen
 
 import ChipSection
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.google.android.material.chip.Chip
+
 
 
 @Composable
 fun LessonsScreen() {
-    onSelectedCategoryChanged()
+    OnSelectedCategoryChanged()
 }
 
 @Composable
-fun onSelectedCategoryChanged() {
+fun OnSelectedCategoryChanged() {
     val chips: List<String> = listOf("All", "Beginner", "Indermediate", "Advanced")
 
     var selectedChip by remember {
@@ -39,20 +37,7 @@ fun onSelectedCategoryChanged() {
             when (selectedChip) {
                 0 -> {
                     // Display list for Chip 1
-                    Column(modifier = Modifier .padding(top = 10.dp, start = 20.dp, end=20.dp))
-                       {
-                        LessonCard("Numbers", 30f)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        LessonCard("Colors", 45f)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        LessonCard("Animals", 89f)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        LessonCard("Numbers", 30f)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        LessonCard("Colors", 45f)
-                        Spacer(modifier = Modifier.height(10.dp))
-                        LessonCard("Animals", 89f)
-                    }
+                   All()
                 }
                 1 -> {
                     // Display list for Chip 2

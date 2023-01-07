@@ -25,6 +25,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.appexamples.firebaseauthjetpackcompose.data.Lesson
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.CircularProgressbar
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.gradientList
 
@@ -32,11 +33,11 @@ import me.nikhilchaudhari.library.neumorphic
 import me.nikhilchaudhari.library.shapes.Pressed
 
 @Composable
-fun  LessonCard(title: String, progress:Float) {
+fun  LessonCard(lesson: Lesson) {
     Row(modifier = Modifier
         .padding(vertical = 12.dp)
         .size(358.dp, 132.dp)
-        .background(gradientList.random(), shape = RoundedCornerShape(10.dp))
+        .background(lesson.color, shape = RoundedCornerShape(10.dp))
         .neumorphic(
             lightShadowColor = Color.Gray,
             elevation = 6.dp,
@@ -49,7 +50,7 @@ fun  LessonCard(title: String, progress:Float) {
             Column {
                 Text(
                     modifier = Modifier.padding(start = 20.dp, top = 23.dp),
-                    text = title,
+                    text = lesson.lesson_name,
                     fontSize = 25.sp,
                     fontWeight = FontWeight.ExtraBold
                 )
@@ -67,7 +68,7 @@ fun  LessonCard(title: String, progress:Float) {
             modifier = Modifier
                 .padding( top = 20.dp, end = 25.dp)
         ) {
-            CircularProgressbar(progress)
+            CircularProgressbar((1..100).random().toFloat())
         }
     }
 }
