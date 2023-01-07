@@ -35,7 +35,7 @@ import me.nikhilchaudhari.library.shapes.Pressed
 fun  LessonCard(title: String, progress:Float) {
     Row(modifier = Modifier
         .padding(vertical = 12.dp)
-        .size(318.dp, 132.dp)
+        .size(358.dp, 132.dp)
         .background(gradientList.random(), shape = RoundedCornerShape(10.dp))
         .neumorphic(
             lightShadowColor = Color.Gray,

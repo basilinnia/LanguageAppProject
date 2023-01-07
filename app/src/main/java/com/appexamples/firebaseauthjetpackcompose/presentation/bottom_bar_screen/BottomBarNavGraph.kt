@@ -10,6 +10,7 @@ import com.appexamples.firebaseauthjetpackcompose.presentation.dictionary_screen
 import com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen.LessonsScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.HomeScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.MainScreen
+import com.appexamples.firebaseauthjetpackcompose.presentation.profile_screen.ProfileScreen
 
 
 @Composable
@@ -28,7 +29,7 @@ fun BottomBarNavGraph(navController: NavHostController) {
             CameraScreen()
         }
         composable(route = BottomBarScreen.ProfileScreen.route) {
-            CameraScreen()
+            ProfileScreen()
         }
             composable(route = BottomBarScreen.DictionaryScreen.route) {
             DictionaryScreen()
