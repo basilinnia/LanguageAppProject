@@ -16,10 +16,13 @@ data class Lesson (
     var words: List<String> = listOf()
 )
 
-val db = Firebase.firestore.collection("lessons")
 
 @Composable
-fun lessonList(lessons: SnapshotStateList<Lesson> = remember { mutableStateListOf(Lesson()) }): List<Lesson> {
+fun lessonList(): List<Lesson> {
+    val lessons = remember {
+        mutableStateListOf<Lesson>()
+    }
+    val db = Firebase.firestore.collection("lessons")
     db.get().addOnSuccessListener {
         lessons.updateList(it.toObjects(Lesson::class.java))
     }.addOnFailureListener {
@@ -27,6 +30,8 @@ fun lessonList(lessons: SnapshotStateList<Lesson> = remember { mutableStateListO
     }
     return lessons
 }
+
+
 
 fun <T> SnapshotStateList<T>.updateList(newList: List<T>){
     clear()

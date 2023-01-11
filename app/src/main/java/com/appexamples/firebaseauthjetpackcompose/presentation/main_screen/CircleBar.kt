@@ -31,7 +31,7 @@ fun CircularProgressbar(
     indicatorThickness: Dp = 14.dp,
     animationDuration: Int = 1000,
     animationDelay: Int = 0,
-    foregroundIndicatorColor: Color = Color(0xFF021C5E),
+    foregroundIndicatorColor: Color = Color(0xFFCE4A4A),
     backgroundIndicatorColor: Color = Color.DarkGray.copy(alpha = 0.5f)
 ) {
 

@@ -8,10 +8,14 @@ val Purple500 = Color(0xFF6200EE)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xAE27ABDF)
 val lightBlue = Color(0xFFC1ECFF)
-val lightColor = Color(0xFF033074)
-val fabColor =   Color(0xFF0461A0)
+val fabColor =   Color(0xFFF56D88)
 val darkBlue = Color(0xFF887CB4)
-val bg_color = Color(0xFF03153b)
+val bottom_color = Color(0xFFD4D5D8)
+val light_color = Color(0xFFE6C6F3)
+val bg_color = Color(0xFFFFFFFF)
+val card_bg = Color(0xB2F52626)
+
+
 
 
 val gradientList = listOf(

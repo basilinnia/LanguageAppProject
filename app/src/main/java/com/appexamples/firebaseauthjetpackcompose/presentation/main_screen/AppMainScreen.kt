@@ -10,6 +10,7 @@ import com.appexamples.firebaseauthjetpackcompose.navigation.Screens
 import com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_screen.BottomBar
 import com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_screen.BottomBarNavGraph
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.bg_color
+import com.appexamples.firebaseauthjetpackcompose.ui.theme.bottom_color
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.fabColor
 
 
@@ -19,7 +20,7 @@ fun MainScreen() {
     val scaffoldState = rememberScaffoldState()
     val navController = rememberNavController()
  Scaffold(
-     backgroundColor = bg_color,
+     backgroundColor = Color.White,
      bottomBar = { BottomBar(navController = navController) },
      floatingActionButton = {
          FloatingActionButton(

@@ -5,13 +5,11 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -20,8 +18,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.appexamples.firebaseauthjetpackcompose.ui.theme.lightColor
-import me.nikhilchaudhari.library.neumorphic
+import com.appexamples.firebaseauthjetpackcompose.ui.theme.bottom_color
 
 
 @Composable
@@ -37,14 +34,15 @@ fun BottomBar(navController: NavHostController) {
 
     BottomAppBar (
         cutoutShape = CircleShape,
-        backgroundColor = lightColor ,
+        backgroundColor = bottom_color ,
         modifier = Modifier
-            .clip(RoundedCornerShape(percent = 22))
             .height(75.dp)
+
     ){
         screens.forEachIndexed{ index, screen ->
             if (index == 2) {
                 // add an empty space for FAB
+
                 BottomNavigationItem(
                     selected = false,
                     onClick = {},
