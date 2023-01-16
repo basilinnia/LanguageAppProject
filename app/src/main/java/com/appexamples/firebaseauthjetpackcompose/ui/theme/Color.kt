@@ -10,13 +10,32 @@ val Teal200 = Color(0xAE27ABDF)
 val lightBlue = Color(0xFFC1ECFF)
 val fabColor =   Color(0xFFF56D88)
 val darkBlue = Color(0xFF887CB4)
-val bottom_color = Color(0xFFD4D5D8)
+val bottom_color = Color(0xFFf6f7ff)
 val light_color = Color(0xFFE6C6F3)
-val bg_color = Color(0xFFFFFFFF)
+val bg_color = Color(0xFFe9e7fb)
 val card_bg = Color(0xB2F52626)
 
 
-
+val gradient1 = Brush.horizontalGradient(
+    colors = listOf(
+        Color(0xFF8B3C3C),
+        Color(0xFFFF3E4E)
+    ))
+val gradient2 = Brush.horizontalGradient(
+    colors = listOf(
+        Color(0xFF5D3C8B),
+        Color(0xFF9F3EFF)
+    ))
+val gradient3 = Brush.horizontalGradient(
+    colors = listOf(
+        Color(0xFF8B7A3C),
+        Color(0xFFFFCF3E)
+    ))
+val gradient4 = Brush.horizontalGradient(
+    colors = listOf(
+        Color(0xFF3C8B3D),
+        Color(0xFF5BFF3E)
+    ))
 
 val gradientList = listOf(
     Brush.horizontalGradient(

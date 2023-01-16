@@ -5,14 +5,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-
-
+import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.PopularLessons
 
 
 @Composable
 fun All() {
     Column {
-
+        PopularLessons()
     }
 }
 

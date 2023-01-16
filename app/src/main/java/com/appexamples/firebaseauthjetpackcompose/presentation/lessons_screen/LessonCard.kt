@@ -16,17 +16,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.appexamples.firebaseauthjetpackcompose.data.Lesson
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.CircularProgressbar
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.card_bg
 import com.appexamples.firebaseauthjetpackcompose.ui.theme.bottom_color
-import com.appexamples.firebaseauthjetpackcompose.ui.theme.light_color
 
 import me.nikhilchaudhari.library.neumorphic
 import me.nikhilchaudhari.library.shapes.Pressed
 
 @Composable
-fun  LessonCard(lesson: Lesson) {
+fun  LessonCard(lesson: Lesson, iconPainter: Int) {
     Row(modifier = Modifier
         .padding(vertical = 12.dp)
         .size(358.dp, 132.dp)

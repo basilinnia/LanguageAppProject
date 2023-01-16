@@ -26,7 +26,7 @@ fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.MainScreen,
         BottomBarScreen.LessonScreen,
-        BottomBarScreen.DictionaryScreen,
+        BottomBarScreen.NotesScreen,
         BottomBarScreen.ProfileScreen
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -37,7 +37,6 @@ fun BottomBar(navController: NavHostController) {
         backgroundColor = bottom_color ,
         modifier = Modifier
             .height(75.dp)
-
     ){
         screens.forEachIndexed{ index, screen ->
             if (index == 2) {
@@ -67,14 +66,14 @@ fun RowScope.AddItem(
 ) {
     BottomNavigationItem(
         label = {
-            Text(text = screen.title, fontSize = 9.sp)
+            Text(text = screen.title, fontSize = 11.sp)
         },
         icon = {
             Icon(
                 imageVector = screen.icon,
                 contentDescription = "Navigation Icon",
                 modifier = Modifier
-                    .size(30.dp)
+                    .size(36.dp)
                     .align(CenterVertically)
             )
         },

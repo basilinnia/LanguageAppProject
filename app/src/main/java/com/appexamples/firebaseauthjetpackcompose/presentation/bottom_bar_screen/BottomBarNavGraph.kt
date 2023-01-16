@@ -4,13 +4,14 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.appexamples.firebaseauthjetpackcompose.navigation.Screens
 import com.appexamples.firebaseauthjetpackcompose.presentation.camera_screen.CameraScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.dictionary_screen.DictionaryScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.lessons_screen.LessonsScreen
 import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.HomeScreen
-import com.appexamples.firebaseauthjetpackcompose.presentation.main_screen.MainScreen
-import com.appexamples.firebaseauthjetpackcompose.presentation.profile_screen.ProfileScreen
+import com.appexamples.firebaseauthjetpackcompose.presentation.quiz_screen.Constants
+import com.appexamples.firebaseauthjetpackcompose.presentation.quiz_screen.QuizScreen
+
+
 
 
 @Composable
@@ -29,9 +30,9 @@ fun BottomBarNavGraph(navController: NavHostController) {
             CameraScreen()
         }
         composable(route = BottomBarScreen.ProfileScreen.route) {
-            ProfileScreen()
+                QuizScreen(Constants.getQuestions(), navController)
         }
-            composable(route = BottomBarScreen.DictionaryScreen.route) {
+        composable(route = BottomBarScreen.NotesScreen.route) {
             DictionaryScreen()
         }
     }

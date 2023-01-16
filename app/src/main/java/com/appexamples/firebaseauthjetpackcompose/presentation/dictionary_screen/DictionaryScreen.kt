@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun DictionaryScreen() {
+fun DictionaryScreen2() {
     Header()
     Box(modifier = Modifier.fillMaxSize()) {
         Text(text = "Dictionary")
@@ -53,3 +53,4 @@ private fun Header() {
             )
     )
 }
+

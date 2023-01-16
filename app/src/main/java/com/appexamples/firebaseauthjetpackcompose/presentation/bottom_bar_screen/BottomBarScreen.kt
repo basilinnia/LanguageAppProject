@@ -2,9 +2,7 @@ package com.appexamples.firebaseauthjetpackcompose.presentation.bottom_bar_scree
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.outlined.Camera
 import androidx.compose.material.icons.outlined.PhotoCamera
-import androidx.compose.material.icons.outlined.Share
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomBarScreen(
@@ -30,10 +28,10 @@ sealed class BottomBarScreen(
         icon = Icons.Outlined.PhotoCamera
     )
 
-    object DictionaryScreen : BottomBarScreen(
-        route = "dictionary",
-        title = "Dictionary",
-        icon = Icons.Default.Book
+    object NotesScreen : BottomBarScreen(
+        route = "notes",
+        title = "Notes",
+        icon = Icons.Default.Article
     )
     object ProfileScreen  : BottomBarScreen(
         route = "profile",

@@ -20,7 +20,7 @@ fun MainScreen() {
     val scaffoldState = rememberScaffoldState()
     val navController = rememberNavController()
  Scaffold(
-     backgroundColor = Color.White,
+     backgroundColor = bg_color,
      bottomBar = { BottomBar(navController = navController) },
      floatingActionButton = {
          FloatingActionButton(
